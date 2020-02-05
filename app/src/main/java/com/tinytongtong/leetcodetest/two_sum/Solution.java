@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @Description: TODO
+ * @Description: https://leetcode-cn.com/problems/two-sum/
  * @Author wangjianzhou@qding.me
  * @Date 2020-02-05 10:15
- * @Version TODO
+ * @Version
  */
 public class Solution {
     public static int[] twoSum(int[] nums, int target) {
@@ -29,6 +29,6 @@ public class Solution {
         int[] nums = new int[]{2, 7, 11, 15};
         int target = 9;
         int[] result = twoSum(nums, target);
-        System.out.println("result:" + result);
+        System.out.println("result:result[0]:" + result[0] + ",result[1]:" + result[1]);
     }
 }
