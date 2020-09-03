@@ -8,6 +8,7 @@ import java.util.HashSet;
 /**
  * @Description: https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/
  * 剑指 Offer 03. 数组中重复的数字
+ * 可以修改数组中的数字
  * @Author tinytongtong
  * @Date 2020/9/3 10:20 AM
  * @Version
@@ -23,8 +24,13 @@ public class DuplicateNumberInArray {
      * @return
      */
     private static int findRepeatNumber(int[] nums) {
-        if (nums == null) {
+        if (nums == null || nums.length == 0) {
             return -1;
+        }
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] < 0 || nums[i] >= nums.length) {
+                return -1;
+            }
         }
         Arrays.sort(nums);
         int pre = -1;
@@ -46,8 +52,13 @@ public class DuplicateNumberInArray {
      * @return
      */
     private static int findRepeatNumber1(int[] nums) {
-        if (nums == null) {
+        if (nums == null || nums.length == 0) {
             return -1;
+        }
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] < 0 || nums[i] >= nums.length) {
+                return -1;
+            }
         }
         HashSet<Integer> map = new HashSet<>();
         for (int i = 0; i < nums.length; i++) {
@@ -67,8 +78,13 @@ public class DuplicateNumberInArray {
      * @return
      */
     private static int findRepeatNumber2(int[] nums) {
-        if (nums == null) {
+        if (nums == null || nums.length == 0) {
             return -1;
+        }
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] < 0 || nums[i] >= nums.length) {
+                return -1;
+            }
         }
         int temp = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -85,66 +101,32 @@ public class DuplicateNumberInArray {
         return -1;
     }
 
-    /**
-     * https://github.com/zhedahht/CodingInterviewChinese2/issues/63
-     * 0~(n-1)这个n个数字在没有重复数字的情况下最多需要交换n-1次就可以让所有数字找到自己的位置
-     * 验证方法
-     *
-     * @param nums
-     * @return
-     */
-    private static int verifyTest(int[] nums) {
-        if (nums == null) {
-            return -1;
-        }
-        int swapCount = 0;
-        int temp = 0;
-        for (int i = 0; i < nums.length; i++) {
-            while (nums[i] != i) {
-                // 交换元素
-                temp = nums[i];
-                nums[i] = i;
-                i = temp;
-                swapCount++;
-            }
-        }
-        return swapCount;
-    }
-
     public static void main(String[] args) {
-        /**
-         * 0~(n-1)这个n个数字在没有重复数字的情况下最多需要交换n-1次就可以让所有数字找到自己的位置
-         */
-        // 测试10遍
-        for (int m = 0; m < 10; m++) {
-            int[] nums1 = new int[100000];
-            ArrayList<Integer> list = new ArrayList<>();
-            for (int i = 0; i < nums1.length; i++) {
-                nums1[i] = i;
-                list.add(i);
-            }
-            // 列表乱序
-            Collections.shuffle(list);
-            for (int i = 0; i < nums1.length; i++) {
-                nums1[i] = list.get(i);
-            }
-            // 获取交换次数
-            int swapCount = verifyTest(nums1);
-            System.out.println("swapCount:" + swapCount);
-        }
-
         // 测试数据
         int[] nums = new int[]{2, 3, 1, 0, 2, 5, 3};
+        test(nums);
 
+        // 无重复数据
+        int[] nums2 = new int[]{0, 1, 2, 3, 4, 5, 6};
+        test(nums2);
+
+        // 数据不符合规定
+        int[] nums3 = new int[]{3, 12, 2, 3, 4, 5, 6};
+        test(nums3);
+    }
+
+    private static void test(int[] nums) {
+        System.out.println("--------------------start--------------------");
+        System.out.println(Arrays.toString(nums));
+        // 测试数据
         int result = findRepeatNumber(nums);
         System.out.println(result);
 
         int result1 = findRepeatNumber1(nums);
         System.out.println(result1);
 
-        int[] nums2 = new int[]{2, 3, 1, 0, 2, 5, 3};
-        int result2 = findRepeatNumber2(nums2);
+        int result2 = findRepeatNumber2(nums);
         System.out.println(result2);
-
+        System.out.println("--------------------end--------------------");
     }
 }
