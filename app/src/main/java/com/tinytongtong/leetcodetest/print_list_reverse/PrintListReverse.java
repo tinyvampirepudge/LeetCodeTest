@@ -12,6 +12,15 @@ import java.util.Stack;
  * @Version
  */
 public class PrintListReverse {
+    private static class ListNode {
+        int val;
+        ListNode next = null;
+
+        ListNode(int val) {
+            this.val = val;
+        }
+    }
+
     public static ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
         // 使用栈来反转链表的顺序
         Stack<Integer> stack = new Stack<>();
