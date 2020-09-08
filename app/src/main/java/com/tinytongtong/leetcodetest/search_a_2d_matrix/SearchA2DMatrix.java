@@ -5,7 +5,7 @@ package com.tinytongtong.leetcodetest.search_a_2d_matrix;
  * https://leetcode-cn.com/problems/search-a-2d-matrix/
  * https://www.nowcoder.com/practice/abc3fe2ce8e146608e868a70efebf62e?tpId=13&tqId=11154&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking
  * 剑指offer第三题
- * @Author wangjianzhou@qding.me
+ * @Author tinytongtong
  * @Date 2020-02-08 13:34
  * @Version
  */

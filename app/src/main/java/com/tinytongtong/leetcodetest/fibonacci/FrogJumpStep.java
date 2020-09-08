@@ -4,7 +4,7 @@ package com.tinytongtong.leetcodetest.fibonacci;
  * @Description: 青蛙跳台阶问题，每次可以调一级，也可以调两级
  * 剑指Offer面试题9
  * https://www.nowcoder.com/practice/8c82a5b80378478f9484d87d1c5f12a4?tpId=13&tqId=11161&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking
- * @Author wangjianzhou@qding.me
+ * @Author tinytongtong
  * @Date 2020-02-09 01:04
  * @Version
  */

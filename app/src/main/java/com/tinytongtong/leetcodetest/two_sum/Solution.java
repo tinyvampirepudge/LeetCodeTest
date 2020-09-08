@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * @Description: https://leetcode-cn.com/problems/two-sum/
- * @Author wangjianzhou@qding.me
+ * @Author tinytongtong
  * @Date 2020-02-05 10:15
  * @Version
  */

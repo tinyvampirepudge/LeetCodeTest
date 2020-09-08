@@ -3,7 +3,7 @@ package com.tinytongtong.leetcodetest.replace_space;
 /**
  * @Description: 替换字符串中的空格
  * https://www.nowcoder.com/practice/4060ac7e3e404ad1a894ef3e17650423?tpId=13&tqId=11155&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking
- * @Author wangjianzhou@qding.me
+ * @Author tinytongtong
  * @Date 2020-02-08 14:56
  * @Version
  */

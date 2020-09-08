@@ -5,7 +5,7 @@ package com.tinytongtong.leetcodetest.inverse_pairs;
  * 剑指Offer第36题
  * LeetCode第629题
  * https://leetcode-cn.com/problems/k-inverse-pairs-array/
- * @Author wangjianzhou@qding.me
+ * @Author tinytongtong
  * @Date 2020-02-06 16:06
  * @Version
  */

@@ -4,7 +4,7 @@ package com.tinytongtong.leetcodetest.fibonacci;
  * @Description: 矩形覆盖问题，用2*1的小矩形覆盖2*n的矩形，有多少种方式
  * https://www.nowcoder.com/practice/72a5a919508a4251859fb2cfb987a0e6?tpId=13&tqId=11163&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking
  * 剑指Offer面试题9
- * @Author wangjianzhou@qding.me
+ * @Author tinytongtong
  * @Date 2020-02-09 01:29
  * @Version
  */

@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * @Description: https://leetcode-cn.com/problems/min-stack/
  * 剑指offer第21题
- * @Author wangjianzhou@qding.me
+ * @Author tinytongtong
  * @Date 2020-02-05 16:15
  * @Version
  */

@@ -7,7 +7,7 @@ import java.util.Stack;
  * @Description: 反转打印链表，不破坏原有链表结构
  * 剑指offer第五题
  * https://www.nowcoder.com/practice/d0267f7f55b3412ba93bd35cfa8e8035?tpId=13&tqId=11156&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking
- * @Author wangjianzhou@qding.me
+ * @Author tinytongtong
  * @Date 2020-02-08 15:51
  * @Version
  */

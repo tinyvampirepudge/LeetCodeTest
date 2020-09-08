@@ -8,7 +8,7 @@ import java.util.Stack;
  * 剑指Offer面试题7
  * https://leetcode-cn.com/problems/implement-queue-using-stacks/
  * https://www.nowcoder.com/practice/54275ddae22f475981afa2244dd448c6?tpId=13&tqId=11158&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking
- * @Author wangjianzhou@qding.me
+ * @Author tinytongtong
  * @Date 2020-02-08 21:20
  * @Version
  */
