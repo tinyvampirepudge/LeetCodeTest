@@ -4,6 +4,7 @@ package com.tinytongtong.leetcodetest.targetoffer.question37;
 /**
  * @Description: https://leetcode-cn.com/problems/xu-lie-hua-er-cha-shu-lcof/
  * 剑指 Offer 37. 序列化二叉树
+ * LeetCode上的题目不是完全二叉树，跟剑指offer上的不一样
  * @Author tinytongtong
  * @Date 2020/9/10 9:26 AM
  * @Version
