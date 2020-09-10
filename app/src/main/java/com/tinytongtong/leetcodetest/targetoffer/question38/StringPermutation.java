@@ -6,6 +6,7 @@ import java.util.HashSet;
 /**
  * @Description: https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/
  * 剑指 Offer 38. 字符串的排列
+ * 全排列的数量是 n!
  * @Author tinytongtong
  * @Date 2020/9/10 10:42 AM
  * @Version
@@ -25,7 +26,7 @@ public class StringPermutation {
     private static void permutationCore(char[] chars, HashSet<String> list, int start) {
         if (start == chars.length) {
             StringBuilder sb = new StringBuilder();
-            for (char item: chars) {
+            for (char item : chars) {
                 sb.append(item);
             }
             list.add(sb.toString());
