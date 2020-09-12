@@ -20,7 +20,7 @@ public class QuickSort {
      * @param end
      */
     private static int partition(int[] data, int start, int end) {
-        if (data == null || data.length == 0 || start < 0 || end >= data.length) {
+        if (data == null || data.length == 0 || start < 0 || end >= data.length || end < start) {
             return -1;
         }
         // 随机获取角标
