@@ -17,40 +17,52 @@ public class TreeToDoublyList {
             this.val = val;
         }
 
-        public Node(int val, Node left, Node right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "val=" + val +
+                    ", left=" + left +
+                    ", right=" + right +
+                    '}';
         }
-
-
     }
-
-    private static Node head, prev;
 
     private static Node treeToDoublyList(Node root) {
         if (root == null) {
             return null;
         }
-        convertCore(root);
-        head.left = prev;
-        prev.right = head;
-        return head;
+        // 最后一个节点
+        Node[] pLast = new Node[1];
+        midOrder(root, pLast);
+        // 获取首节点
+        while (pLast[0] != null && pLast[0].left != null) {
+            pLast[0] = pLast[0].left;
+        }
+        return pLast[0];
     }
 
-    private static void convertCore(Node root) {
+    private static void midOrder(Node root, Node[] pLast) {
         if (root == null) {
             return;
         }
-        convertCore(root.left);
-        if (prev != null) {
-            prev.right = root;
-        } else {
-            head = root;
+        Node pCurrent = root;
+        // 遍历左子节点
+        if (pCurrent.left != null) {
+            midOrder(pCurrent.left, pLast);
         }
-        root.left = prev;
-        prev = root;
-        convertCore(root.right);
+        // 链接左子节点和中间节点
+        pCurrent.left = pLast[0];
+        if (pLast[0] != null) {
+            pLast[0].right = pCurrent;
+        }
+        // 中间节点
+        System.out.println(pCurrent.val);
+        // 链接中间节点
+        pLast[0] = pCurrent;
+        // 遍历右子节点
+        if (pCurrent.right != null) {
+            midOrder(pCurrent.right, pLast);
+        }
     }
 
     public static void main(String[] args) {
@@ -70,6 +82,17 @@ public class TreeToDoublyList {
 
         System.out.println(root);
         Node result = treeToDoublyList(root);
-        System.out.println(result);
+        System.out.println("从小到大：");
+        Node pLast = null;
+        while (result != null) {
+            System.out.println(result.val);
+            pLast = result;
+            result = result.right;
+        }
+        System.out.println("从大到小：");
+        while (pLast != null) {
+            System.out.println(pLast.val);
+            pLast = pLast.left;
+        }
     }
 }
