@@ -12,12 +12,38 @@ public class PatternMatch {
         if (s == null || p == null) {
             return false;
         }
-        return matchCore(s, p, 0, 0);
-    }
+        int n = s.length();
+        int m = p.length();
+        boolean[][] f = new boolean[n + 1][m + 1];
 
-    private static boolean matchCore(String s, String p, int indexS, int indexP) {
-        // TODO: 2020/9/7 6:10 PM  
-        return false;
+
+        for (int i = 0; i <= n; i++) {
+            for (int j = 0; j <= m; j++) {
+                // 分为 空正则 和 非空正则 两种
+                if (j == 0) {
+                    f[i][j] = i == 0;
+                } else {
+                    // 非空正则分为两种情况， * 和 非*
+                    if (p.charAt(j - 1) != '*') {
+                        if (i > 0 && (s.charAt(i - 1) == p.charAt(j - 1) || p.charAt(j - 1) == '.')) {
+                            f[i][j] = f[i - 1][j - 1];
+                        }
+                    } else {
+                        // 碰到 * 了，分为看和不来看两种情况
+                        // 不看
+                        if (j >= 2) {
+                            f[i][j] |= f[i][j - 2];
+                        }
+                        // 看
+                        if (i >= 1 && j >= 2 && (s.charAt(i - 1) == p.charAt(j - 2) || p.charAt(j - 2) == '.')) {
+                            f[i][j] |= f[i - 1][j];
+                        }
+                    }
+                }
+            }
+        }
+
+        return f[n][m];
     }
 
     public static void main(String[] args) {
