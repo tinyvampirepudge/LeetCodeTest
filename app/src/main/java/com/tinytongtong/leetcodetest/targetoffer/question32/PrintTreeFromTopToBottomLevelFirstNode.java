@@ -1,13 +1,11 @@
 package com.tinytongtong.leetcodetest.targetoffer.question32;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 /**
  * @Description: 头条面试题
- *  从上到下打印二叉树，每层的第一个节点
+ * 从上到下打印二叉树，每层的第一个节点
  * 分层打印
  * @Author tinytongtong
  * @Date 2020/11/25 10:11 AM
@@ -34,24 +32,28 @@ public class PrintTreeFromTopToBottomLevelFirstNode {
         }
     }
 
-    private static List<List<Integer>> printTree(TreeNode root) {
+    /**
+     * 打印每层第一个节点
+     *
+     * @param root
+     * @return
+     */
+    private static void printLevelFirstNode(TreeNode root) {
         if (root == null) {
-            return null;
+            return;
         }
-        List<List<Integer>> result = new ArrayList<>();
+        // 1、分层打印
+        // 2、打印每层第一个节点
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         // 下一层的节点数
         int nextLevel = 0;
         // 当前层中还没有打印的节点数
         int toBePrinted = 1;// 从root节点开始。
-        List<Integer> list = new ArrayList<>();
-        result.add(list);
         // 打印左侧第一个节点
         System.out.println(queue.peek().val);
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
-            list.add(node.val);
             if (node.left != null) {
                 queue.add(node.left);
                 nextLevel++;
@@ -64,8 +66,6 @@ public class PrintTreeFromTopToBottomLevelFirstNode {
             if (toBePrinted == 0) {
                 // 如果下一层没有结点，就不添加list了
                 if (nextLevel > 0) {
-                    list = new ArrayList<>();
-                    result.add(list);
                     // 打印左侧第一个节点
                     System.out.println(queue.peek().val);
                 }
@@ -73,7 +73,6 @@ public class PrintTreeFromTopToBottomLevelFirstNode {
                 nextLevel = 0;
             }
         }
-        return result;
     }
 
     public static void main(String[] args) {
@@ -93,8 +92,7 @@ public class PrintTreeFromTopToBottomLevelFirstNode {
         pRoot12.left = pNode23;
         pRoot12.right = pRoot24;
         System.out.println(pRoot1);
-
-        List<List<Integer>> result = printTree(pRoot1);
-        System.out.println(result);
+        System.out.println("————————————————————————————");
+        printLevelFirstNode(pRoot1);
     }
 }
