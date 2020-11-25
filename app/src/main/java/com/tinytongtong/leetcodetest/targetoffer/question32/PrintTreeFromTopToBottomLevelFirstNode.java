@@ -6,14 +6,15 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * @Description: https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof/
- * 剑指 Offer 32 - II. 从上到下打印二叉树 II
+ * @Description: 头条面试题
+ *  从上到下打印二叉树，每层的第一个节点
  * 分层打印
  * @Author tinytongtong
- * @Date 2020/9/9 11:16 AM
+ * @Date 2020/11/25 10:11 AM
  * @Version
  */
-public class PrintTreeFromTopToBottomLevel {
+
+public class PrintTreeFromTopToBottomLevelFirstNode {
     private static class TreeNode {
         int val;
         TreeNode left;
