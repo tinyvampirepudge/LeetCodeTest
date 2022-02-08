@@ -1,15 +1,16 @@
-package com.tinytongtong.leetcodetest.two_sum;
+package com.tinytongtong.leetcodetest.question1;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @Description: https://leetcode-cn.com/problems/two-sum/
+ * @Description: 1. 两数之和
+ * https://leetcode-cn.com/problems/two-sum/
  * @Author tinytongtong
  * @Date 2020-02-05 10:15
  * @Version
  */
-public class Solution {
+public class TwoSumSolution {
     public static int[] twoSum(int[] nums, int target) {
         // 存储数据值和对应的角标
         Map<Integer, Integer> map = new HashMap<>();
