@@ -60,7 +60,7 @@ public class AddTwoNumbers {
         int extra = 0; // 进位
         ListNode dummy = new ListNode();
         ListNode head = dummy;
-        do {
+        while (l1 != null || l2 != null || extra > 0) {
             // 构建新的node
             ListNode ln = new ListNode();
             // val相加
@@ -71,19 +71,15 @@ public class AddTwoNumbers {
                 ln.val += extra;
             }
             // 重新计算extra的值
-            if (ln.val >= 10) {
-                extra = 1;
-                ln.val -= 10;
-            } else {
-                extra = 0;
-            }
+            extra = Math.max(ln.val / 10, 0);
+            ln.val %= 10;
             // 组成新的链表
             head.next = ln;
             head = head.next;
             // 指向下一个指针
             if (l1 != null) l1 = l1.next;
             if (l2 != null) l2 = l2.next;
-        } while (l1 != null || l2 != null || extra > 0);
+        }
         return dummy.next;
     }
 }
