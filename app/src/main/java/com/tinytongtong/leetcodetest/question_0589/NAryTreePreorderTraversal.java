@@ -1,4 +1,4 @@
-package com.tinytongtong.leetcodetest.tree_preorder_traversal;
+package com.tinytongtong.leetcodetest.question_0589;
 
 import java.util.Arrays;
 import java.util.Collections;

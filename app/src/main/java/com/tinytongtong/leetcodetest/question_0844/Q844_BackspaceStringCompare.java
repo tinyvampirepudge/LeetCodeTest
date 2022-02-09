@@ -1,9 +1,10 @@
-package com.tinytongtong.leetcodetest;
+package com.tinytongtong.leetcodetest.question_0844;
 
 import java.util.Stack;
 
 /**
- * @Description: https://leetcode-cn.com/problems/backspace-string-compare/
+ * @Description: 844. 比较含退格的字符串
+ * https://leetcode-cn.com/problems/backspace-string-compare/
  * @Author tinytongtong
  * @Date 2020/10/19 4:29 PM
  * @Version

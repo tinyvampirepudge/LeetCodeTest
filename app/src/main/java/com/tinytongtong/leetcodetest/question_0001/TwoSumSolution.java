@@ -1,4 +1,4 @@
-package com.tinytongtong.leetcodetest.question1;
+package com.tinytongtong.leetcodetest.question_0001;
 
 import java.util.HashMap;
 import java.util.Map;

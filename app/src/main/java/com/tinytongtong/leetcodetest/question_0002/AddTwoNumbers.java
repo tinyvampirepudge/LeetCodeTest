@@ -1,4 +1,4 @@
-package com.tinytongtong.leetcodetest.question2;
+package com.tinytongtong.leetcodetest.question_0002;
 
 /**
  * @Description: 2. 两数相加

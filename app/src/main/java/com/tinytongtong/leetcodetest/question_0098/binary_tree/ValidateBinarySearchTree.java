@@ -1,4 +1,4 @@
-package com.tinytongtong.leetcodetest.binary_tree;
+package com.tinytongtong.leetcodetest.question_0098.binary_tree;
 
 import java.util.Stack;
 

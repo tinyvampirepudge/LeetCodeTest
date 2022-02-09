@@ -1,4 +1,4 @@
-package com.tinytongtong.leetcodetest.remove_duplicates_from_sorted_array;
+package com.tinytongtong.leetcodetest.question_0026;
 
 /**
  * @Description: https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/

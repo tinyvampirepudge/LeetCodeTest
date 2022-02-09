@@ -1,4 +1,4 @@
-package com.tinytongtong.leetcodetest.binary_tree;
+package com.tinytongtong.leetcodetest.question_0104;
 
 import java.util.LinkedList;
 import java.util.Queue;

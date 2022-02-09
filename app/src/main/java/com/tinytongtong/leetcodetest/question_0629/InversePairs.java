@@ -1,7 +1,8 @@
-package com.tinytongtong.leetcodetest.inverse_pairs;
+package com.tinytongtong.leetcodetest.question_0629;
 
 /**
- * @Description: 逆序对
+ * @Description: 629. K个逆序对数组
+ * 逆序对
  * 剑指Offer第36题
  * LeetCode第629题
  * https://leetcode-cn.com/problems/k-inverse-pairs-array/

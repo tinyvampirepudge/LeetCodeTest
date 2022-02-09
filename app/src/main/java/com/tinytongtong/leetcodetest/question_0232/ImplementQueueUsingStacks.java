@@ -1,10 +1,10 @@
-package com.tinytongtong.leetcodetest.implement_queue_using_stacks;
+package com.tinytongtong.leetcodetest.question_0232;
 
-import java.util.EmptyStackException;
 import java.util.Stack;
 
 /**
- * @Description: 用栈是先链表
+ * @Description: 232. 用栈实现队列
+ * 用栈是先链表
  * 剑指Offer面试题7
  * https://leetcode-cn.com/problems/implement-queue-using-stacks/
  * https://www.nowcoder.com/practice/54275ddae22f475981afa2244dd448c6?tpId=13&tqId=11158&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking
@@ -12,7 +12,7 @@ import java.util.Stack;
  * @Date 2020-02-08 21:20
  * @Version
  */
-public class MyQueue {
+public class ImplementQueueUsingStacks {
     /**
      * push操作：直接放入stack1
      * pop操作：
@@ -25,7 +25,7 @@ public class MyQueue {
     /**
      * Initialize your data structure here.
      */
-    public MyQueue() {
+    public ImplementQueueUsingStacks() {
 
     }
 

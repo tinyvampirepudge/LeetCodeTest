@@ -1,9 +1,10 @@
-package com.tinytongtong.leetcodetest.min_stack;
+package com.tinytongtong.leetcodetest.question_0155;
 
 import java.util.Stack;
 
 /**
- * @Description: https://leetcode-cn.com/problems/min-stack/
+ * @Description: 155. 最小栈
+ * https://leetcode-cn.com/problems/min-stack/
  * 剑指offer第21题
  * @Author tinytongtong
  * @Date 2020-02-05 16:15
