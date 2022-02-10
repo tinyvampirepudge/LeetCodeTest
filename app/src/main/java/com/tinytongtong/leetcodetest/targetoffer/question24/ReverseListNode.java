@@ -58,32 +58,18 @@ public class ReverseListNode {
      * 时间复杂度O(n)
      * 空间复杂度O(n)
      *
-     * @param pHead
+     * @param head
      * @return
      */
-    private static ListNode reverseListByRecursive(ListNode pHead) {
-        if (pHead == null) {
-            return null;
-        }
-        ListNode pRoot = pHead;
-        while (pRoot.next != null) {
-            pRoot = pRoot.next;
-        }
-        ListNode pPrev = reverseListByRecursiveCore(pHead);
-        return pRoot;
-    }
-
-    private static ListNode reverseListByRecursiveCore(ListNode pHead) {
-        if (pHead == null) {
-            return null;
-        }
-        ListNode pPrev = reverseListByRecursiveCore(pHead.next);
-        // 防止形成环
-        pHead.next = null;
-        if (pPrev != null) {
-            pPrev.next = pHead;
-        }
-        return pHead;
+    private static ListNode reverseListByRecursive(ListNode head) {
+        // 元素为空、或者是最后一个元素
+        if (head == null || head.next == null) return head;
+        // 递归处理好新链表，前面的数据。
+        ListNode newHead = reverseListByRecursive(head.next);
+        // reverse
+        head.next.next = head;
+        head.next = null; // 防止形成环
+        return newHead; // 返回新链表中的前一个指针
     }
 
     /**
