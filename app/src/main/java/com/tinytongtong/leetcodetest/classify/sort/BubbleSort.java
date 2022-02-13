@@ -24,7 +24,7 @@ public class BubbleSort {
      * @param a
      * @param n
      */
-    public static void bubbleSort(int[] a, int n) {
+    private static void bubbleSort(int[] a, int n) {
         if (a == null || n <= 1) {
             return;
         }
