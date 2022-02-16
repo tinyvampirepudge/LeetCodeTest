@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
- * @Description: 快速排序
+ * @Description: 快速排序，随机选择 pivot
  * @Author tinytongtong
  * @Date 2020/9/5 4:36 PM
  * @Version
