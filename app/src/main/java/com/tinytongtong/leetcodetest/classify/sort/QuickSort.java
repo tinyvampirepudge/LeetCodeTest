@@ -15,6 +15,7 @@ public class QuickSort {
     public static void main(String[] args) {
 //        int[] array = new int[]{4, 5, 6, 3, 2, 1};
         int[] array = new int[]{6, 5, 4, 3, 2, 1};
+//        int[] array = new int[]{4, 2, 1};
         int n = 6;
         System.out.println(Arrays.toString(array));
         quickSort(array, n);
@@ -51,24 +52,32 @@ public class QuickSort {
         // 获取所及的pivot
         int randomIndex = new Random().nextInt(end - start) + start;
         // randomIndex 跟最后一个元素交换位置
-        int pivot = a[randomIndex];
-        int temp = a[end];
-        a[end] = pivot;
-        a[randomIndex] = temp;
+        if (end != randomIndex) {
+            a[end] ^= a[randomIndex];
+            a[randomIndex] ^= a[end];
+            a[end] ^= a[randomIndex];
+        }
+
         // 从前到后遍历，将小于pivot的数交换到前面。
         int index = start;
-        for (int i = start; i <= end; i++) {
-            if (a[i] < pivot) {
-                temp = a[index];
-                a[index] = a[i];
-                a[i] = temp;
+        for (int i = start; i < end; i++) {
+            if (a[i] < a[end]) {
+                if (i != index) {
+                    a[index] ^= a[i];
+                    a[i] ^= a[index];
+                    a[index] ^= a[i];
+                }
+
                 index++;
             }
         }
         // 将 randomIndex 交换到小于它的数的后面
-        temp = a[index];
-        a[index] = a[end];
-        a[end] = temp;
+        if (index != end) {
+            a[index] ^= a[end];
+            a[end] ^= a[index];
+            a[index] ^= a[end];
+        }
+
         return index;
     }
 }
