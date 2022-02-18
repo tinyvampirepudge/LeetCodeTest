@@ -44,7 +44,7 @@ public class HeapSort {
         }
 
         public void insert(int data) {
-            if (count >= n) { // 堆满了
+            if (count > n) { // 堆满了
                 return;
             }
             count++;
@@ -81,19 +81,21 @@ public class HeapSort {
         private void heapify(int[] a, int n, int i) {
             while (true) {
                 int maxPos = i;
+                // 分别比较左右子节点
                 if (i * 2 <= n && a[i] < a[i * 2]) {
                     maxPos = i * 2;
                 }
                 if (i * 2 + 1 <= n && a[i] < a[i * 2 + 1]) {
                     maxPos = i * 2 + 1;
                 }
-                if (maxPos == i) {
+                if (maxPos == i) { // 没有子节点大于父节点，退出循环
                     break;
                 }
                 // swap
                 int temp = a[i];
                 a[i] = a[maxPos];
                 a[maxPos] = temp;
+                // 子节点继续比较
                 i = maxPos;
             }
         }
