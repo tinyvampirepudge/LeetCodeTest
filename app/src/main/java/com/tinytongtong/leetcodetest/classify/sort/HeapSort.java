@@ -10,7 +10,7 @@ import java.util.Arrays;
  */
 public class HeapSort {
     public static void main(String[] args) {
-        Heap heap = new Heap(6);
+        MaxHeap heap = new MaxHeap(6);
         heap.insert(1);
         heap.insert(2);
         heap.insert(3);
@@ -32,12 +32,12 @@ public class HeapSort {
      * 大顶堆.
      * 根节点的元素最大
      */
-    private static class Heap {
+    private static class MaxHeap {
         int[] a; // 数据容器，从下标1开始存储数据
         int n; // 堆可以存储的最大数据个数
         int count; // 堆中已经存储的数据格式
 
-        public Heap(int capacity) {
+        public MaxHeap(int capacity) {
             a = new int[capacity + 1];
             n = capacity;
             count = 0;
@@ -100,7 +100,7 @@ public class HeapSort {
 
         @Override
         public String toString() {
-            return "Heap{" +
+            return "MaxHeap{" +
                     "a=" + Arrays.toString(a) +
                     ", n=" + n +
                     ", count=" + count +
