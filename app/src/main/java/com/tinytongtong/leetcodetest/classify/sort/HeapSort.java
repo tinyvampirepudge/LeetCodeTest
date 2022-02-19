@@ -10,22 +10,42 @@ import java.util.Arrays;
  */
 public class HeapSort {
     public static void main(String[] args) {
-        MaxHeap heap = new MaxHeap(6);
-        heap.insert(1);
-        heap.insert(2);
-        heap.insert(3);
-        heap.insert(4);
-        heap.insert(5);
-        heap.insert(6);
-        System.out.println(heap.toString());
+        System.out.println("MaxHeap");
+        MaxHeap maxHeap = new MaxHeap(6);
+        maxHeap.insert(1);
+        maxHeap.insert(2);
+        maxHeap.insert(3);
+        maxHeap.insert(4);
+        maxHeap.insert(5);
+        maxHeap.insert(6);
+        System.out.println(maxHeap.toString());
 
-        System.out.println(heap.removeMax());
-        System.out.println(heap.removeMax());
-        System.out.println(heap.removeMax());
-        System.out.println(heap.removeMax());
-        System.out.println(heap.removeMax());
-        System.out.println(heap.removeMax());
-        System.out.println(heap.toString());
+        System.out.println(maxHeap.removeMax());
+        System.out.println(maxHeap.removeMax());
+        System.out.println(maxHeap.removeMax());
+        System.out.println(maxHeap.removeMax());
+        System.out.println(maxHeap.removeMax());
+        System.out.println(maxHeap.removeMax());
+        System.out.println(maxHeap.toString());
+
+        System.out.println("MinHeap");
+
+        MinHeap minHeap = new MinHeap(6);
+        minHeap.insert(1);
+        minHeap.insert(2);
+        minHeap.insert(3);
+        minHeap.insert(4);
+        minHeap.insert(5);
+        minHeap.insert(6);
+        System.out.println(minHeap.toString());
+
+        System.out.println(minHeap.removeMin());
+        System.out.println(minHeap.removeMin());
+        System.out.println(minHeap.removeMin());
+        System.out.println(minHeap.removeMin());
+        System.out.println(minHeap.removeMin());
+        System.out.println(minHeap.removeMin());
+        System.out.println(minHeap.toString());
     }
 
     /**
@@ -103,6 +123,77 @@ public class HeapSort {
         @Override
         public String toString() {
             return "MaxHeap{" +
+                    "a=" + Arrays.toString(a) +
+                    ", n=" + n +
+                    ", count=" + count +
+                    '}';
+        }
+    }
+
+    private static final class MinHeap {
+        private int[] a;
+        private int n;
+        private int count;
+
+        public MinHeap(int capacity) {
+            a = new int[capacity + 1];
+            this.n = capacity;
+            count = 0;
+        }
+
+        private void insert(int data) {
+            if (count > n) { // 超出范围
+                return;
+            }
+            count++;
+            a[count] = data;
+            // 调整位置
+            int i = count;
+            while (i > 0 && i / 2 > 0 && a[i] < a[i / 2]) {
+                // swap
+                int tmp = a[i];
+                a[i] = a[i / 2];
+                a[i / 2] = tmp;
+                i = i / 2;
+            }
+        }
+
+        private int removeMin() {
+            if (count == 0) {
+                return -1;
+            }
+            int result = a[1];
+            a[1] = a[count];
+            count--;
+            // heapify
+            heapify(a, count, 1);
+            return result;
+        }
+
+        private void heapify(int[] a, int n, int i) {
+            while (true) {
+                int minPos = i;
+                // 比较左右子节点
+                if (i * 2 <= n && a[i] > a[i * 2]) {
+                    minPos = i * 2;
+                }
+                if (i * 2 + 1 <= n && a[i] > a[i * 2 + 1]) {
+                    minPos = i * 2 + 1;
+                }
+                if (minPos == i) {
+                    break;
+                }
+                // swap
+                int tmp = a[i];
+                a[i] = a[minPos];
+                a[minPos] = tmp;
+                i = minPos;
+            }
+        }
+
+        @Override
+        public String toString() {
+            return "MinHeap{" +
                     "a=" + Arrays.toString(a) +
                     ", n=" + n +
                     ", count=" + count +
