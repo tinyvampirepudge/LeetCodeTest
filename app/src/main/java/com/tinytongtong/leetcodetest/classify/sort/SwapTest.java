@@ -2,7 +2,7 @@ package com.tinytongtong.leetcodetest.classify.sort;
 
 /**
  * @Description: swap交换小技巧
- * @Author wangjianzhou@didichuxing.me
+ * @Author wangjianzhou
  * @Date 2/17/22 8:55 AM
  * @Version
  */
